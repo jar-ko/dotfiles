@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if [ -z "${1}" ]
+if [ -z "${*}" ]
 then
-    echo "Missing parameter"
+    echo "Missing command to execute"
     exit 1
 fi
 
@@ -10,6 +10,6 @@ for d in $(ls -d */)
 do
     echo "##### ${d}"
     cd "${d}"
-    eval "${1}"
+    eval "${*}"
     cd ..
 done
